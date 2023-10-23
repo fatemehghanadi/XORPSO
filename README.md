@@ -2,7 +2,7 @@
 
 This repository contains the implementation of the research described in the following paper:
 
-**Title:** Optimized Deep Feature Selection for Pneumonia Detection: A Novel RegNet and XOR-Based PSO Approachv
+**Title:** Optimized Deep Feature Selection for Pneumonia Detection: A Novel RegNet and XOR-Based PSO Approach
 
 **Authors:** Fatemehsadat Ghanadi Ladani, Samaneh Hosseini Semnani
 
