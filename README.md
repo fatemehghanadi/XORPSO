@@ -17,6 +17,6 @@ The code in this repository corresponds to the research presented in the paper. 
 
 For further details, please refer to the full paper:
 
-[Optimized Deep Feature Selection for Pneumonia Detection: A Novel RegNet and XOR-Based PSO Approachv](https://arxiv.org/pdf/2309.00147.pdf)
+[Optimized Deep Feature Selection for Pneumonia Detection: A Novel RegNet and XOR-Based PSO Approach](https://arxiv.org/pdf/2309.00147.pdf)
 
 
