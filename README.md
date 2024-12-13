@@ -11,15 +11,24 @@ to select deep features from the second last layer of a RegNet model, aiming to 
 
 ![Pipeline Overview](PN_pip.png)
 
+
+---
+
 ## Code Overview
 
 The code in this repository corresponds to the research presented in the paper. It includes implementations of the algorithms, experiments, and analysis conducted in the paper. You can find detailed explanations and usage instructions in the relevant directories.
 
+
+---
+
+
 ## XOR PSO: A Binary Particle Swarm Optimization Algorithm
 
-# Overview
+### Overview
 
 XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for discrete optimization problems, such as feature selection. Unlike conventional PSO designed for continuous spaces, XOR PSO uses binary vectors to represent solutions and employs XOR logic to update positions and velocities.
+
+---
 
 ## Key Features
 - **Binary Solution Representation**: Each position is a binary vector indicating selected features.
@@ -28,17 +37,18 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
 - **Discrete Optimization**: Efficiently explores binary solution spaces.
 
 
-## Formulas
+### Formulas
 
-### Velocity Update
-\[
-V_{t+1} = W \cdot V_t + R_1 \cdot \text{XOR}(P_{best}, X_t) + R_2 \cdot \text{XOR}(G_{best}, X_t)
-\]
+#### Velocity Update
+**Equation**:
+\( V_{t+1} = W \cdot V_t + R_1 \cdot \text{XOR}(P_{best}, X_t) + R_2 \cdot \text{XOR}(G_{best}, X_t) \)
+
 - \(W\): Inertia weight (\(0 \leq W \leq 1\)).
 - \(R_1\): Random factor (\(-1 \leq R_1 \leq 1\)).
 - \(R_2\): Random factor (\(0 \leq R_2 \leq 1\)).
 
-### Threshold Mapping
+#### Threshold Mapping
+**Equation**:
 \[
 V_{t+1} = 
 \begin{cases} 
@@ -47,17 +57,20 @@ V_{t+1} =
 \end{cases}
 \]
 
-### Position Update
-\[
-X_{t+1} = \text{XOR}(X_t, V_{t+1})
-\]
+#### Position Update
+**Equation**:
+\( X_{t+1} = \text{XOR}(X_t, V_{t+1}) \)
+
+---
 
 ## Advantages
 - **Simplified Parameter Tuning**: No need for \(C_1\) and \(C_2\).
 - **Effective for Feature Selection**: Specifically designed for binary optimization tasks.
 - **Fewer Hyperparameters**: Reduces complexity compared to other swarm algorithms.
 
-## How It Works
+---
+
+### How It Works
 1. **Initialization**: Binary positions (\(X\)) and velocities (\(V\)) are initialized randomly.
 2. **Velocity Update**: Update velocity using XOR logic, inertia weight, and random factors.
 3. **Threshold Mapping**: Map \(V_{t+1}\) to binary values using a 0.5 threshold.
@@ -65,9 +78,14 @@ X_{t+1} = \text{XOR}(X_t, V_{t+1})
 5. **Evaluation**: Calculate fitness and update \(P_{best}\) and \(G_{best}\).
 6. **Repeat**: Continue until convergence or a termination condition is met.
 
-## Applications
+---
+
+### Applications
 - **Feature Selection**: Selects the most relevant features in a dataset for machine learning models.
 - **Discrete Optimization**: Solves problems where solutions are represented in binary form.
+
+---
+
 ## Paper Reference
 
 For further details, please refer to the full paper:
