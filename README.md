@@ -44,9 +44,7 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
 
 ### Velocity Update
 <p align="center">
-  <code style="color:blue; font-weight:bold;">
-    V<sub>t+1</sub> = W · V<sub>t</sub> + R<sub>1</sub> · XOR(P<sub>best</sub>, X<sub>t</sub>) + R<sub>2</sub> · XOR(G<sub>best</sub>, X<sub>t</sub>)
-  </code>
+  <code style="color:blue; font-weight:bold;"> V<sub>t+1</sub> = W · V<sub>t</sub> + R<sub>1</sub> · XOR(P<sub>best</sub>, X<sub>t</sub>) + R<sub>2</sub> · XOR(G<sub>best</sub>, X<sub>t</sub>)</code>
 </p>
 
 ### Threshold Mapping
