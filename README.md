@@ -52,15 +52,12 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
   <code style="color:blue; font-weight:bold;">
     V<sub>t+1</sub> = { 
       0 if V<sub>t+1</sub> &lt; 0.5 <br>
-      1 if V<sub>t+1</sub> ≥ 0.5
-    } </code>
+      1 if V<sub>t+1</sub> ≥ 0.5} </code>
 </p>
 
 ### Position Update
 <p align="center">
-  <code style="color:blue; font-weight:bold;">
-    X<sub>t+1</sub> = XOR(X<sub>t</sub>, V<sub>t+1</sub>)
-  </code>
+  <code style="color:blue; font-weight:bold;"> X<sub>t+1</sub> = XOR(X<sub>t</sub>, V<sub>t+1</sub>) </code>
 </p>
 
 ---
