@@ -49,8 +49,7 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
 
 ### Threshold Mapping
 <p align="center">
-  <code style="color:blue; font-weight:bold;">
-    V<sub>t+1</sub> = { 
+  <code style="color:blue; font-weight:bold;"> V<sub>t+1</sub> = { 
       0 if V<sub>t+1</sub> &lt; 0.5 <br>
       1 if V<sub>t+1</sub> ≥ 0.5} </code>
 </p>
