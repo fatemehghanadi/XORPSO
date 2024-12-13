@@ -44,22 +44,27 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
 
 ### Velocity Update
 <p align="center">
-  <img src="https://latex.codecogs.com/png.latex?V_{t+1}=W%5Ccdot%20V_t+R_1%5Ccdot%20%5Ctext%7BXOR%7D%28P_%7Bbest%7D%2CX_t%29+R_2%5Ccdot%20%5Ctext%7BXOR%7D%28G_%7Bbest%7D%2CX_t%29" alt="Velocity Update Formula">
+  <code style="color:blue; font-weight:bold;">
+    V<sub>t+1</sub> = W · V<sub>t</sub> + R<sub>1</sub> · XOR(P<sub>best</sub>, X<sub>t</sub>) + R<sub>2</sub> · XOR(G<sub>best</sub>, X<sub>t</sub>)
+  </code>
 </p>
-<ul>
-  <li><strong>W:</strong> Inertia weight (<code>0 ≤ W ≤ 1</code>).</li>
-  <li><strong>R<sub>1</sub>:</strong> Random factor (<code>−1 ≤ R<sub>1</sub> ≤ 1</code>).</li>
-  <li><strong>R<sub>2</sub>:</strong> Random factor (<code>0 ≤ R<sub>2</sub> ≤ 1</code>).</li>
-</ul>
 
 ### Threshold Mapping
 <p align="center">
-  <img src="https://latex.codecogs.com/png.latex?V_{t+1}=%5Cbegin%7Bcases%7D0%26%5Ctext%7Bif%20%7D%20V_{t+1}%3C0.5%5C%5C1%26%5Ctext%7Bif%20%7D%20V_{t+1}%5Cgeq0.5%5Cend%7Bcases%7D" alt="Threshold Mapping Formula">
+  <code style="color:blue; font-weight:bold;">
+    V<sub>t+1</sub> = 
+    { 
+      0 if V<sub>t+1</sub> &lt; 0.5 <br>
+      1 if V<sub>t+1</sub> ≥ 0.5
+    }
+  </code>
 </p>
 
 ### Position Update
 <p align="center">
-  <img src="https://latex.codecogs.com/png.latex?X_{t+1}=%5Ctext%7BXOR%7D%28X_t%2CV_{t+1}%29" alt="Position Update Formula">
+  <code style="color:blue; font-weight:bold;">
+    X<sub>t+1</sub> = XOR(X<sub>t</sub>, V<sub>t+1</sub>)
+  </code>
 </p>
 
 ---
