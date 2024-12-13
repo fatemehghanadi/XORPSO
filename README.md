@@ -30,62 +30,68 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
 
 ---
 
-## Key Features
-- **Binary Solution Representation**: Each position is a binary vector indicating selected features.
-- **XOR Logic**: Captures the difference between personal best (\(P_{best}\)), global best (\(G_{best}\)), and current position (\(X\)).
-- **Reduced Hyperparameters**: Simplifies the algorithm by eliminating or setting standard values for some parameters (e.g., \(C_1\) and \(C_2\)).
-- **Discrete Optimization**: Efficiently explores binary solution spaces.
+### Key Features
+<ul>
+  <li><strong>Binary Solution Representation:</strong> Each position is a binary vector indicating selected features.</li>
+  <li><strong>XOR Logic:</strong> Captures the difference between personal best (<code>P<sub>best</sub></code>), global best (<code>G<sub>best</sub></code>), and current position (<code>X</code>).</li>
+  <li><strong>Reduced Hyperparameters:</strong> Simplifies the algorithm by eliminating or setting standard values for some parameters (e.g., <code>C<sub>1</sub></code> and <code>C<sub>2</sub></code>).</li>
+  <li><strong>Discrete Optimization:</strong> Efficiently explores binary solution spaces.</li>
+</ul>
 
+---
 
-### Formulas
+## Formulas
 
-#### Velocity Update
-**Equation**:
-\( V_{t+1} = W \cdot V_t + R_1 \cdot \text{XOR}(P_{best}, X_t) + R_2 \cdot \text{XOR}(G_{best}, X_t) \)
+### Velocity Update
+<p align="center">
+  <img src="https://latex.codecogs.com/png.latex?V_{t+1}=W%5Ccdot%20V_t+R_1%5Ccdot%20%5Ctext%7BXOR%7D%28P_%7Bbest%7D%2CX_t%29+R_2%5Ccdot%20%5Ctext%7BXOR%7D%28G_%7Bbest%7D%2CX_t%29" alt="Velocity Update Formula">
+</p>
+<ul>
+  <li><strong>W:</strong> Inertia weight (<code>0 ≤ W ≤ 1</code>).</li>
+  <li><strong>R<sub>1</sub>:</strong> Random factor (<code>−1 ≤ R<sub>1</sub> ≤ 1</code>).</li>
+  <li><strong>R<sub>2</sub>:</strong> Random factor (<code>0 ≤ R<sub>2</sub> ≤ 1</code>).</li>
+</ul>
 
-- \(W\): Inertia weight (\(0 \leq W \leq 1\)).
-- \(R_1\): Random factor (\(-1 \leq R_1 \leq 1\)).
-- \(R_2\): Random factor (\(0 \leq R_2 \leq 1\)).
+### Threshold Mapping
+<p align="center">
+  <img src="https://latex.codecogs.com/png.latex?V_{t+1}=%5Cbegin%7Bcases%7D0%26%5Ctext%7Bif%20%7D%20V_{t+1}%3C0.5%5C%5C1%26%5Ctext%7Bif%20%7D%20V_{t+1}%5Cgeq0.5%5Cend%7Bcases%7D" alt="Threshold Mapping Formula">
+</p>
 
-#### Threshold Mapping
-**Equation**:
-\[
-V_{t+1} = 
-\begin{cases} 
-0 & \text{if } V_{t+1} < 0.5 \\
-1 & \text{if } V_{t+1} \geq 0.5
-\end{cases}
-\]
-
-#### Position Update
-**Equation**:
-\( X_{t+1} = \text{XOR}(X_t, V_{t+1}) \)
+### Position Update
+<p align="center">
+  <img src="https://latex.codecogs.com/png.latex?X_{t+1}=%5Ctext%7BXOR%7D%28X_t%2CV_{t+1}%29" alt="Position Update Formula">
+</p>
 
 ---
 
 ## Advantages
-- **Simplified Parameter Tuning**: No need for \(C_1\) and \(C_2\).
-- **Effective for Feature Selection**: Specifically designed for binary optimization tasks.
-- **Fewer Hyperparameters**: Reduces complexity compared to other swarm algorithms.
+<ul>
+  <li><strong>Simplified Parameter Tuning:</strong> No need for <code>C<sub>1</sub></code> and <code>C<sub>2</sub></code>.</li>
+  <li><strong>Effective for Feature Selection:</strong> Specifically designed for binary optimization tasks.</li>
+  <li><strong>Fewer Hyperparameters:</strong> Reduces complexity compared to other swarm algorithms.</li>
+</ul>
 
 ---
 
-### How It Works
-1. **Initialization**: Binary positions (\(X\)) and velocities (\(V\)) are initialized randomly.
-2. **Velocity Update**: Update velocity using XOR logic, inertia weight, and random factors.
-3. **Threshold Mapping**: Map \(V_{t+1}\) to binary values using a 0.5 threshold.
-4. **Position Update**: Update positions using the XOR operation.
-5. **Evaluation**: Calculate fitness and update \(P_{best}\) and \(G_{best}\).
-6. **Repeat**: Continue until convergence or a termination condition is met.
+## How It Works
+<ol>
+  <li><strong>Initialization:</strong> Binary positions (<code>X</code>) and velocities (<code>V</code>) are initialized randomly.</li>
+  <li><strong>Velocity Update:</strong> Update velocity using XOR logic, inertia weight, and random factors.</li>
+  <li><strong>Threshold Mapping:</strong> Map <code>V<sub>t+1</sub></code> to binary values using a 0.5 threshold.</li>
+  <li><strong>Position Update:</strong> Update positions using the XOR operation.</li>
+  <li><strong>Evaluation:</strong> Calculate fitness and update <code>P<sub>best</sub></code> and <code>G<sub>best</sub></code>.</li>
+  <li><strong>Repeat:</strong> Continue until convergence or a termination condition is met.</li>
+</ol>
 
 ---
 
-### Applications
-- **Feature Selection**: Selects the most relevant features in a dataset for machine learning models.
-- **Discrete Optimization**: Solves problems where solutions are represented in binary form.
+## Applications
+<ul>
+  <li><strong>Feature Selection:</strong> Selects the most relevant features in a dataset for machine learning models.</li>
+  <li><strong>Discrete Optimization:</strong> Solves problems where solutions are represented in binary form.</li>
+</ul>
 
 ---
-
 ## Paper Reference
 
 For further details, please refer to the full paper:
