@@ -43,7 +43,7 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
 ## Formulas
 
 ### Velocity Update
-<p align="center">
+<p align="center" style="color:blue;">
   <img src="https://latex.codecogs.com/png.latex?V_{t+1}=W%5Ccdot%20V_t+R_1%5Ccdot%20%5Ctext%7BXOR%7D%28P_%7Bbest%7D%2CX_t%29+R_2%5Ccdot%20%5Ctext%7BXOR%7D%28G_%7Bbest%7D%2CX_t%29" alt="Velocity Update Formula">
 </p>
 <ul>
@@ -53,12 +53,12 @@ XOR PSO is a modified Particle Swarm Optimization (PSO) algorithm tailored for d
 </ul>
 
 ### Threshold Mapping
-<p align="center">
+<p align="center" style="color:blue;">
   <img src="https://latex.codecogs.com/png.latex?V_{t+1}=%5Cbegin%7Bcases%7D0%26%5Ctext%7Bif%20%7D%20V_{t+1}%3C0.5%5C%5C1%26%5Ctext%7Bif%20%7D%20V_{t+1}%5Cgeq0.5%5Cend%7Bcases%7D" alt="Threshold Mapping Formula">
 </p>
 
 ### Position Update
-<p align="center">
+<p align="center" style="color:blue;">
   <img src="https://latex.codecogs.com/png.latex?X_{t+1}=%5Ctext%7BXOR%7D%28X_t%2CV_{t+1}%29" alt="Position Update Formula">
 </p>
 
